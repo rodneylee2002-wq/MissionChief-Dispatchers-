@@ -45,6 +45,14 @@ function save(s) {
   localStorage.setItem(KEY, JSON.stringify(s));
 }
 
+function sendWebhook(type, data) {
+  fetch("/api/webhook", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ type, data })
+  }).catch(() => {});
+}
+
 function go(p) {
   location.hash = p;
 }
@@ -568,6 +576,11 @@ function bind() {
         version: "MCD-" + (s.rulesVersion || 1)
       });
       save(s);
+      sendWebhook("rules", {
+        discord: discord.value.trim(),
+        mc: mc.value.trim(),
+        version: "MCD-" + (s.rulesVersion || 1)
+      });
       msg(
         "acceptMsg",
         "Rules accepted. Your verification record has been saved on this device.",
@@ -594,6 +607,13 @@ function bind() {
         time: new Date().toISOString()
       });
       save(s);
+      sendWebhook("building", {
+        player: player.value.trim(),
+        server: server.dataset.v,
+        type: type.dataset.v,
+        building: building.value.trim(),
+        address: address.value.trim()
+      });
       msg("requestMsg", "Building request submitted.", "success");
       rf.reset();
       document.querySelectorAll(".choice").forEach((x) => x.classList.remove("active"));
@@ -623,6 +643,14 @@ function bind() {
         time: new Date().toISOString()
       });
       save(s);
+      sendWebhook("training", {
+        player: tPlayer.value.trim(),
+        server: server.dataset.v,
+        category: type.dataset.cat || "",
+        type: type.dataset.v,
+        seats: seats,
+        classrooms: classrooms
+      });
       msg(
         "trainingMsg",
         "Training request submitted — " + seats + " seat(s) = " + classrooms + " classroom(s).",
