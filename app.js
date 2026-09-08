@@ -90,11 +90,41 @@ function homePage() {
   <div id="utcClock" style="font-size:28px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums">--:--:--</div>
   <div id="utcDate" style="font-size:14px;color:var(--muted);margin-top:4px">—</div>
 </div>
+<div class="dispatch-img-wrap">
+  <img src="https://media.base44.com/images/public/6a9f74dd44a484093e958b7e/aaaf65bd1_DQD1f.jpg" alt="MissionChief Dispatchers control room" class="dispatch-img">
+</div>
 <div class="grid">
   <div class="card"><div class="stat">3<small>Active worlds</small></div></div>
   <div class="card"><div class="stat">24/7<small>Dispatch support</small></div></div>
   <div class="card"><div class="stat">1<small>Unified alliance portal</small></div></div>
 </div>
+<section class="section">
+  <div class="eyebrow">DISPATCH SERVICES</div>
+  <h2>Our <span>response divisions</span></h2>
+  <p class="lead">From the control room to the field — our alliance coordinates four core emergency services across all three regions.</p>
+  <div class="grid svc-grid">
+    <div class="card svc-card" style="--svc:#4dabf7">
+      <div class="svc-icon">🚓</div>
+      <h3>Police</h3>
+      <p>Law enforcement operations, SWAT, K-9, aviation, and traffic control across all worlds.</p>
+    </div>
+    <div class="card svc-card" style="--svc:#ff6b35">
+      <div class="svc-icon">🔥</div>
+      <h3>Fire</h3>
+      <p>Firefighting, hazmat, ARFF, wildland, technical rescue, and airborne operations.</p>
+    </div>
+    <div class="card svc-card" style="--svc:#20d77b">
+      <div class="svc-icon">🚑</div>
+      <h3>EMS</h3>
+      <p>Emergency medical services, critical care, tactical medics, and mountain rescue.</p>
+    </div>
+    <div class="card svc-card" style="--svc:#22b8cf">
+      <div class="svc-icon">🚁</div>
+      <h3>Coastal Rescue</h3>
+      <p>Coastal air rescue, lifeguard operations, ocean navigation, and swift water rescue.</p>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="eyebrow">REGIONAL NETWORK</div>
   <h2>One alliance. <span>Three regions.</span></h2>

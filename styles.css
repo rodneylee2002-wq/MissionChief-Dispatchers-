@@ -159,6 +159,26 @@ a{color:var(--blue3)}
   header{padding-right:60px}
 }
 
+/* Dispatch image */
+.dispatch-img-wrap{
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  margin:0 0 24px;background:#0a1224
+}
+.dispatch-img{display:block;width:100%;height:auto;border-radius:16px}
+
+/* Service cards */
+.svc-grid{grid-template-columns:repeat(2,1fr)}
+.svc-card{text-align:center;transition:border-color .15s,transform .15s}
+.svc-card:hover{border-color:var(--svc);transform:translateY(-3px)}
+.svc-icon{
+  font-size:42px;line-height:1;margin-bottom:12px;
+  filter:drop-shadow(0 0 12px var(--svc))
+}
+.svc-card h3{color:var(--svc);margin:0 0 8px}
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr}
+}
+
 /* Per-server colors */
 .server-us{border-color:#3b8eff55!important;color:#93c5fd}
 .server-us:hover,.server-us.active{
