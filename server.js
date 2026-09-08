@@ -21,7 +21,9 @@ function getWebhookUrl(type, data) {
 }
 
 function buildEmbed(type, data) {
-  const now = new Date().toISOString();
+  const now = new Date();
+  const utcStr = now.toISOString().replace('T', ' ').replace(/\.\d+Z$/, ' UTC');
+  const ts = now.toISOString();
   if (type === 'rules') {
     return {
       title: '✅ Rules Accepted',
@@ -30,8 +32,9 @@ function buildEmbed(type, data) {
         { name: 'Discord', value: String(data.discord || '—'), inline: true },
         { name: 'MissionChief', value: String(data.mc || '—'), inline: true },
         { name: 'Version', value: String(data.version || '—'), inline: true },
+        { name: 'Time (UTC)', value: utcStr, inline: false },
       ],
-      timestamp: now,
+      timestamp: ts,
     };
   }
   if (type === 'building') {
@@ -44,8 +47,9 @@ function buildEmbed(type, data) {
         { name: 'Type', value: String(data.type || '—'), inline: true },
         { name: 'Building', value: String(data.building || '—'), inline: false },
         { name: 'Address', value: String(data.address || '—'), inline: false },
+        { name: 'Time (UTC)', value: utcStr, inline: false },
       ],
-      timestamp: now,
+      timestamp: ts,
     };
   }
   if (type === 'training') {
@@ -59,8 +63,9 @@ function buildEmbed(type, data) {
         { name: 'Training', value: String(data.type || '—'), inline: false },
         { name: 'Seats', value: String(data.seats ?? '—'), inline: true },
         { name: 'Classrooms', value: String(data.classrooms ?? '—'), inline: true },
+        { name: 'Time (UTC)', value: utcStr, inline: false },
       ],
-      timestamp: now,
+      timestamp: ts,
     };
   }
   return null;

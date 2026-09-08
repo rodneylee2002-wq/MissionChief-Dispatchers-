@@ -85,6 +85,11 @@ function homePage() {
   <button class="btn" onclick="go('training')">Request training</button>
   <button class="btn" onclick="go('maps')">Alliance maps</button>
 </section>
+<div class="card" style="text-align:center;padding:18px 20px">
+  <div style="font-size:13px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Current time (UTC)</div>
+  <div id="utcClock" style="font-size:28px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums">--:--:--</div>
+  <div id="utcDate" style="font-size:14px;color:var(--muted);margin-top:4px">—</div>
+</div>
 <div class="grid">
   <div class="card"><div class="stat">3<small>Active worlds</small></div></div>
   <div class="card"><div class="stat">24/7<small>Dispatch support</small></div></div>
@@ -557,7 +562,26 @@ function selectChoice(el, id) {
   el.classList.add("active");
 }
 
+let utcInterval = null;
+function startUTCClock() {
+  if (utcInterval) clearInterval(utcInterval);
+  const update = () => {
+    const now = new Date();
+    const clock = document.getElementById("utcClock");
+    const date = document.getElementById("utcDate");
+    if (!clock) { clearInterval(utcInterval); return; }
+    const h = String(now.getUTCHours()).padStart(2, "0");
+    const m = String(now.getUTCMinutes()).padStart(2, "0");
+    const s = String(now.getUTCSeconds()).padStart(2, "0");
+    clock.textContent = `${h}:${m}:${s}`;
+    if (date) date.textContent = now.toUTCString().slice(5, 16);
+  };
+  update();
+  utcInterval = setInterval(update, 1000);
+}
+
 function bind() {
+  if (document.getElementById("utcClock")) startUTCClock();
   const af = document.getElementById("acceptForm");
   if (af)
     af.onsubmit = (e) => {
