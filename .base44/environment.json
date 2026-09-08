@@ -2,5 +2,11 @@
   "previewPort": 3000,
   "healthPath": "/",
   "startCommand": "docker compose -f docker-compose.base44.yml up -d",
-  "secrets": []
+  "secrets": [
+    { "name": "WEBHOOK_RULES", "description": "Discord webhook URL for rules acceptance notifications", "requiredAtBoot": false },
+    { "name": "WEBHOOK_BUILDING", "description": "Discord webhook URL for building request notifications", "requiredAtBoot": false },
+    { "name": "WEBHOOK_TRAINING_US", "description": "Discord webhook URL for US training request notifications", "requiredAtBoot": false },
+    { "name": "WEBHOOK_TRAINING_UK", "description": "Discord webhook URL for UK training request notifications", "requiredAtBoot": false },
+    { "name": "WEBHOOK_TRAINING_AU", "description": "Discord webhook URL for AU training request notifications", "requiredAtBoot": false }
+  ]
 }
