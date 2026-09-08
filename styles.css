@@ -168,13 +168,15 @@ a{color:var(--blue3)}
 
 /* Service cards */
 .svc-grid{grid-template-columns:repeat(2,1fr)}
-.svc-card{text-align:center;transition:border-color .15s,transform .15s}
+.svc-card{overflow:hidden;padding:0;transition:border-color .15s,transform .15s}
 .svc-card:hover{border-color:var(--svc);transform:translateY(-3px)}
-.svc-icon{
-  font-size:42px;line-height:1;margin-bottom:12px;
-  filter:drop-shadow(0 0 12px var(--svc))
+.svc-img{
+  height:160px;background-size:cover;background-position:center;
+  border-bottom:3px solid var(--svc)
 }
-.svc-card h3{color:var(--svc);margin:0 0 8px}
+.svc-body{padding:18px 20px}
+.svc-body h3{color:var(--svc);margin:0 0 8px}
+.svc-body p{color:var(--muted);line-height:1.5;font-size:15px}
 @media(max-width:900px){
   .svc-grid{grid-template-columns:1fr}
 }

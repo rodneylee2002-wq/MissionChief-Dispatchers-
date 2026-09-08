@@ -104,24 +104,32 @@ function homePage() {
   <p class="lead">From the control room to the field — our alliance coordinates four core emergency services across all three regions.</p>
   <div class="grid svc-grid">
     <div class="card svc-card" style="--svc:#4dabf7">
-      <div class="svc-icon">🚓</div>
-      <h3>Police</h3>
-      <p>Law enforcement operations, SWAT, K-9, aviation, and traffic control across all worlds.</p>
+      <div class="svc-img" style="background-image:url('https://images.pexels.com/photos/532001/pexels-photo-532001.jpeg?cs=tinysrgb&dpr=2&w=600')"></div>
+      <div class="svc-body">
+        <h3>Police</h3>
+        <p>Law enforcement operations, SWAT, K-9, aviation, and traffic control across all worlds.</p>
+      </div>
     </div>
     <div class="card svc-card" style="--svc:#ff6b35">
-      <div class="svc-icon">🔥</div>
-      <h3>Fire</h3>
-      <p>Firefighting, hazmat, ARFF, wildland, technical rescue, and airborne operations.</p>
+      <div class="svc-img" style="background-image:url('https://images.pexels.com/photos/21838999/pexels-photo-21838999.jpeg?cs=tinysrgb&dpr=2&w=600')"></div>
+      <div class="svc-body">
+        <h3>Fire</h3>
+        <p>Firefighting, hazmat, ARFF, wildland, technical rescue, and airborne operations.</p>
+      </div>
     </div>
     <div class="card svc-card" style="--svc:#20d77b">
-      <div class="svc-icon">🚑</div>
-      <h3>EMS</h3>
-      <p>Emergency medical services, critical care, tactical medics, and mountain rescue.</p>
+      <div class="svc-img" style="background-image:url('https://images.pexels.com/photos/6519935/pexels-photo-6519935.jpeg?cs=tinysrgb&dpr=2&w=600')"></div>
+      <div class="svc-body">
+        <h3>EMS</h3>
+        <p>Emergency medical services, critical care, tactical medics, and mountain rescue.</p>
+      </div>
     </div>
     <div class="card svc-card" style="--svc:#22b8cf">
-      <div class="svc-icon">🚁</div>
-      <h3>Coastal Rescue</h3>
-      <p>Coastal air rescue, lifeguard operations, ocean navigation, and swift water rescue.</p>
+      <div class="svc-img" style="background-image:url('https://images.pexels.com/photos/38153652/pexels-photo-38153652.jpeg?cs=tinysrgb&dpr=2&w=600')"></div>
+      <div class="svc-body">
+        <h3>Coastal Rescue</h3>
+        <p>Coastal air rescue, lifeguard operations, ocean navigation, and swift water rescue.</p>
+      </div>
     </div>
   </div>
 </section>
