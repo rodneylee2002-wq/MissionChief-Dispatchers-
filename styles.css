@@ -20,9 +20,11 @@ html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helv
 body{min-height:100vh;background:
   radial-gradient(ellipse 80% 50% at 50% -20%,rgba(37,99,235,.18),transparent),
   var(--bg)}
-.topbar{height:34px;padding:8px 18px;background:#050810;color:#64748b;font-size:11px;letter-spacing:1px;border-bottom:1px solid #0f1a2e}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 18px;background:#050810;color:#64748b;font-size:11px;letter-spacing:1px;border-bottom:1px solid #0f1a2e}
 .dot{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:7px}
-.regions{float:right;color:#475569}
+.topbar-utc{font-size:13px;font-weight:800;color:var(--blue3);font-variant-numeric:tabular-nums;letter-spacing:2px}
+.topbar-utc small{font-size:10px;color:#64748b;font-weight:600}
+.topbar-right{color:#475569}
 header{
   position:sticky;top:0;z-index:20;
   background:rgba(6,10,20,.96);

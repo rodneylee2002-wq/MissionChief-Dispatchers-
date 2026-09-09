@@ -85,11 +85,7 @@ function homePage() {
   <button class="btn" onclick="go('training')">Request training</button>
   <button class="btn" onclick="go('maps')">Alliance maps</button>
 </section>
-<div class="card" style="text-align:center;padding:18px 20px">
-  <div style="font-size:13px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Current time (UTC)</div>
-  <div id="utcClock" style="font-size:28px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums">--:--:--</div>
-  <div id="utcDate" style="font-size:14px;color:var(--muted);margin-top:4px">—</div>
-</div>
+
 <div class="dispatch-img-wrap">
   <img src="https://media.base44.com/images/public/6a9f74dd44a484093e958b7e/aaaf65bd1_DQD1f.jpg" alt="MissionChief Dispatchers control room" class="dispatch-img">
 </div>
@@ -606,20 +602,18 @@ function startUTCClock() {
   const update = () => {
     const now = new Date();
     const clock = document.getElementById("utcClock");
-    const date = document.getElementById("utcDate");
     if (!clock) { clearInterval(utcInterval); return; }
     const h = String(now.getUTCHours()).padStart(2, "0");
     const m = String(now.getUTCMinutes()).padStart(2, "0");
     const s = String(now.getUTCSeconds()).padStart(2, "0");
     clock.textContent = `${h}:${m}:${s}`;
-    if (date) date.textContent = now.toUTCString().slice(5, 16);
   };
   update();
   utcInterval = setInterval(update, 1000);
 }
 
 function bind() {
-  if (document.getElementById("utcClock")) startUTCClock();
+  startUTCClock();
   const af = document.getElementById("acceptForm");
   if (af)
     af.onsubmit = (e) => {
