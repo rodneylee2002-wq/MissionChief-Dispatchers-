@@ -76,6 +76,9 @@ function render() {
 
 function homePage() {
   return `
+<div class="hero-banner">
+  <img src="https://media.base44.com/images/public/6a9f74dd44a484093e958b7e/2ef61f3f5_image_1f261f2.jpg" alt="MissionChief Dispatchers — emergency services composite" class="hero-banner-img">
+</div>
 <section class="hero">
   <div class="eyebrow">FIRST RESPONDERS • DISPATCHERS COMMUNITY</div>
   <h1>MISSIONCHIEF<br><span>DISPATCHERS</span></h1>
@@ -86,9 +89,6 @@ function homePage() {
   <button class="btn" onclick="go('maps')">Alliance maps</button>
 </section>
 
-<div class="dispatch-img-wrap">
-  <img src="https://media.base44.com/images/public/6a9f74dd44a484093e958b7e/aaaf65bd1_DQD1f.jpg" alt="MissionChief Dispatchers control room" class="dispatch-img">
-</div>
 <div class="grid">
   <div class="card"><div class="stat">3<small>Active worlds</small></div></div>
   <div class="card"><div class="stat">24/7<small>Dispatch support</small></div></div>
@@ -98,6 +98,9 @@ function homePage() {
   <div class="eyebrow">DISPATCH SERVICES</div>
   <h2>Our <span>response divisions</span></h2>
   <p class="lead">From the control room to the field — our alliance coordinates four core emergency services across all three regions.</p>
+  <div class="dispatch-img-wrap dispatch-img-sm">
+    <img src="https://media.base44.com/images/public/6a9f74dd44a484093e958b7e/aaaf65bd1_DQD1f.jpg" alt="MissionChief Dispatchers control room" class="dispatch-img">
+  </div>
   <div class="grid svc-grid">
     <div class="card svc-card" style="--svc:#4dabf7">
       <div class="svc-img" style="background-image:url('https://images.pexels.com/photos/532001/pexels-photo-532001.jpeg?cs=tinysrgb&dpr=2&w=600')"></div>
